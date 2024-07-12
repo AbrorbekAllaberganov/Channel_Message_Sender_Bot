@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>All Posts</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+  <h1>All Posts</h1>
+  <a href="/publish" class="btn">Publish a New Post</a>
+  <div th:if="${posts != null}">
+    <ul>
+      <li th:each="post : ${posts}">
+        <div class="post-item">
+          <a th:href="@{/post/{id}(id=${post.id})}" th:text="${post.title}"></a>
+          <a th:href="@{/update/{id}(id=${post.id})}" class="btn-update">Update</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div th:if="${posts == null}">
+    <p>No posts available.</p>
+  </div>
+</div>
+</body>
+</html>

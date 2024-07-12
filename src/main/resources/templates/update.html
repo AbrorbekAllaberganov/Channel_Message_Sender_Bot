@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Post</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+  <h1>Update Post</h1>
+  <form th:action="@{/update/{id}(id=${post.id})}" method="post">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" th:value="${post.title}" required>
+    </div>
+    <div class="form-group">
+      <label for="body">Body:</label>
+      <textarea id="body" name="body" rows="10" required th:text="${post.body}"></textarea>
+    </div>
+    <button type="submit">Update</button>
+  </form>
+</div>
+</body>
+</html>
