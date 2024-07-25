@@ -8,12 +8,12 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class AdminBotApplication extends TelegramLongPollingBot {
     @Override
     public String getBotToken() {
-        return "7396366908:AAFN3OLVXpf1YWGs5SutbSGHC3oVK9IJD6Q";
+        return "TOKEN";
     }
 
     @Override
     public String getBotUsername() {
-        return "self_project_bot";
+        return "BOT_USERNAME";
     }
 
     @Override
